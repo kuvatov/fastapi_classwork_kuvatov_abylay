@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "kino"
+version = "0.1.0"
+description = ""
+authors = ["Abylay Kuvatov <abukuvatov@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.105.0"
+uvicorn = "^0.24.0.post1"
+tortoise-orm = {extras = ["asyncpg"], version = "^0.20.0"}
+aerich = "^0.7.2"
+
+
+
+[tool.aerich]
+tortoise_orm = "kino.app.db.conf.TORTOISE_ORM"
+location = ".\\kino\\migrations"
+src_folder = "./.\\kino"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
